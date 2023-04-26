@@ -39,11 +39,14 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
    2. Alınan dizinin bir kopyasını döndür
 */
 
-
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala (orijinalTatlar){
+  const result = [];
+  for(let i = 0 ; i<orijinalTatlar.length ;i++){
+    result[i]= orijinalTatlar[i];
+  }
+console.log(result);
+return result;
 }
-
 
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
@@ -56,9 +59,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(orijinalTatlar){
+if(orijinalTatlar.length == 25){
+  return true ;
+}else{
+return false ;
 }
+}
+//console.log (dizi25Cesitmi(orijinalTatlar));
 
 
 /* Görev 3:
@@ -74,10 +82,10 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(dizi,tatlı){
+  dizi.unshift(tatlı);
+  return dizi;
 }
-
 
 /* Cörev 4:
 
@@ -92,8 +100,9 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(tatlar){
+  tatlar.pop();
+  return tatlar;
 }
 
 
@@ -108,10 +117,10 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(tatlar,sayi){
+  return tatlar [sayi]
 }
-
+console.log (indekstekiCesitiGetir(orijinalTatlar,2))
 
 /* Görev 6:
 
@@ -128,8 +137,14 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlar,lezzetAdi){
+  for (let i = 0; i < tatlar.length; i++) {
+    const element = tatlar[i];
+    if(element==lezzetAdi){
+      tatlar.splice(i,1)
+    }
+  }
+  return(tatlar)
 }
 
 
@@ -154,8 +169,13 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlar,lezzet){
+  let newArray =[];
+  for(let i =0 ; i<tatlar.length; i++)
+  if(tatlar[i].includes(lezzet)){
+    newArray.push(tatlar[i])
+  }
+  return newArray
 }
 
 
@@ -172,9 +192,21 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(/*kod buraya*/){
-  /*kod buraya*/
+function ortalamaKelimeSayisi(dizi){
+  //dizinin her ellementine tek tek bakılır
+  //her elementin kelime sayısı hesaplanır
+  //her elementin kelime sayısı toplanır
+  //toplam dizinin uzunluğuna bölünür.
+  //ortalama dönülür
+  let toplam = 0
+  for(let i =0 ;i< dizi.length ; i++){
+    let kelimeler =dizi[i].split("")
+    let kelimeSayisi = kelimeler.length
+  }
+  let average = toplam / dizi.length
+  return average
 }
+console.log(ortalamaKelimeSayisi(orijinalTatlar))
 
 
 /* ALIŞTIRMA 2:
